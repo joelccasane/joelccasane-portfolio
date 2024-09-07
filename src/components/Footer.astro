@@ -1,0 +1,65 @@
+---
+import {hero} from "../assets/data/data.json";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <p>Copyright © <span id="year">{year}</span> <a href={hero.github} class="footer__user" target="_blank" rel="noopener noreferrer" aria-label="GitHub user">Joel Ccasane</a> . All rights reserved</p>
+    <div class="footer__links">
+        <a href={hero.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Linkedin">Linkedin</a>
+        <a href={hero.email} aria-label="Contact">Contact</a>
+    </div>
+</footer>
+
+<style>
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 3.125rem;
+    font-size: 0.875rem;
+    color: var(--clr-primary-white);
+    background-color: var(--clr-primary-900);
+}
+
+.footer__user {
+    text-decoration: none;
+    color: var(--clr-primary-white);
+    transition: .3s ease-in;
+}
+
+.footer__links {
+    display: flex;
+    gap: .8rem;
+}
+
+.footer__links a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--clr-primary-white);
+    transition: .3s ease-in;
+
+}
+
+.footer__user:hover,
+.footer__links a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+@media (max-width: 767px) {
+	.footer {
+		flex-direction: column;
+        align-items: center;
+        text-align: center;
+		gap: .4rem;
+		padding: .8rem 1.5rem;
+	}
+}
+</style>
+
+<script>
+    const yearElement = document.querySelector('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear().toString();
+    }
+</script>

@@ -1,0 +1,35 @@
+{
+	"hero": {
+		"name": "Joel",
+		"description": "Front-end Developer with strong knowledge of JavaScript and experience in building responsive and interactive web applications. Dedicated to optimizing web performance and creating accessible, visually appealing interfaces that provide a satisfying user experience.",
+		"github": "https://github.com/joelccasane",
+		"linkedin": "https://www.linkedin.com/in/joelccasane",
+		"email": "mailto:joelccasane@gmail.com",
+		"cv": "https://drive.google.com/file/d/1gPqvE0KS_6UYfcKp_jC993GQll2THCm6/view"
+	},
+	"experience": [
+		{
+			"company": "Tecnovo Perú Soluciones",
+			"date": "Nov. 2023 - Feb. 2024",
+			"position": "Front-End Developer",
+			"description": "I was part of a team that developed a system using Angular. I designed and executed extensive test cases, managed defect reporting and tracking, and collaborated closely with the team to ensure the quality and functionality of the final product."
+		}
+	],
+	"education": [
+		{
+			"institution": "Universidad Tecnológica del Perú",
+			"date": "Mar. 2024 - Now",
+			"field": "Systems Engineer"
+		},
+		{
+			"institution": "ONE - Oracle Next Education",
+			"date": "Jun. 2024 - Now",
+			"field": "Web Development"
+		},
+		{
+			"institution": "Cibertec",
+			"date": "Mar. 2020 - Dec. 2022",
+			"field": "Network and Communications Administration"
+		}
+	]
+}

@@ -1,0 +1,135 @@
+---
+import {hero} from "../assets/data/data.json"
+
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+		<meta name="description" content={hero.description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title} - Front-End Developer</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	
+@font-face {
+	font-family: "DM Serif Text";
+	src: url('../assets/fonts/dm-serif-text.woff2') format('woff2'),
+	url('../assets/fonts/dm-serif-text.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}
+
+:root {
+	--clr-primary-white: #fff;
+    --clr-primary-50: #f5f5f5;
+    --clr-primary-100: #e9e9e9;
+    --clr-primary-200: #d9d9d9;
+    --clr-primary-300: #c4c4c4;
+    --clr-primary-400: #9d9d9d;
+    --clr-primary-500: #7b7b7b;
+    --clr-primary-600: #555555;
+    --clr-primary-700: #434343;
+    --clr-primary-800: #262626;
+    --clr-primary-900: #000000;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+body {
+    position: relative;
+    min-height: 100dvh;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background: url('../assets/images/grain.png') center no-repeat; 
+	background-size: cover; 
+	opacity: 0.20; 
+	z-index: 100;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background: var(--clr-primary-800); 
+	mix-blend-mode: overlay;
+	opacity: 0.05;
+	z-index: 100;
+}
+
+p{
+    text-wrap: pretty;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "DM Serif Text", sans-serif;
+    text-wrap: balance;
+}
+
+img, svg{
+	height: auto;
+	max-width: 100%;
+}
+
+main {
+	flex-grow: 1;
+	background-color: var(--clr-primary-50);
+}
+
+@media (max-width: 767px) {
+    .experience,
+	.education,
+	.skills {
+        padding: 4.5rem 1.875rem 0;
+    }
+
+	.education__company,
+	.experience__company {
+		flex-direction: column;
+	}
+}
+
+</style>

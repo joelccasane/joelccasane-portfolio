@@ -1,0 +1,114 @@
+---
+import {experience} from "../assets/data/data.json"
+---
+
+<section id="experience" class="experience">
+    <div class="container__experience">
+        <div class="experience__header">
+            <span></span>
+            <span></span>    
+        </div>
+        <h2>Experience</h2>
+        <article class="experience__data">
+            {experience.map(exp => (
+                <div class="experience__company">
+                    <span>{exp.company}</span>
+                    <time>{exp.date}</time>
+                </div>
+                <div class="experience__description">
+                    <span>{exp.position}</span>
+                    <p>{exp.description}</p>
+                </div>
+              ))}
+        </article>
+    </div>
+</section>
+
+<style>
+
+.experience {
+    padding-top: 4.5rem;
+    scroll-margin-top: 3rem ;
+}
+
+.container__experience {
+    max-width: 660px;
+    margin: auto;
+    padding: 1rem;
+    color: var(--clr-primary-800);
+    border: 8px solid var(--clr-primary-800);
+    background-color: var(--clr-primary-white);
+    box-shadow:
+    -1px 1px 0 var(--clr-primary-800), 
+    -2px 2px 0 var(--clr-primary-800),
+    -3px 3px 0 var(--clr-primary-800),
+    -4px 4px 0 var(--clr-primary-800),
+    -5px 5px 0 var(--clr-primary-800),
+    -6px 6px 0 var(--clr-primary-800),
+    -7px 7px 0 var(--clr-primary-800),
+    -8px 8px 0 var(--clr-primary-800),
+    -9px 9px 0 var(--clr-primary-800),
+    -10px 10px 0 var(--clr-primary-800);
+}
+
+
+.experience__data {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: .6rem;
+    background-color: var(--clr-primary-100);
+}
+
+.experience__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience__header span{
+    background-color: var(--clr-primary-800);
+    padding: 2.3rem;
+    border-radius: 50%;
+}
+
+.experience h2 {
+    font-size: 2rem;
+    color: var(--clr-primary-800);
+    margin: .6rem;
+}
+
+.experience__company {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.experience__company time {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--clr-primary-600);
+}
+
+.experience__description span {
+    color: var(--clr-primary-800);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.experience__description {
+    font-size: 0.875rem;
+    color: var(--clr-primary-700);
+}
+
+@media (max-width: 767px) {
+    .experience__header {
+        display: none;
+    }
+
+    .experience__company {
+        font-size: 0.875rem;
+    }
+}
+</style>

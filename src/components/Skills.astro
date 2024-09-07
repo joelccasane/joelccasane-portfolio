@@ -1,0 +1,105 @@
+---
+import Html from '../assets/icons/Html.astro';
+import Css from '../assets/icons/Css.astro';
+import Javascript from '../assets/icons/Javascript.astro';
+import Typescript from '../assets/icons/Typescript.astro';
+import Angular from '../assets/icons/Angular.astro';
+import Tailwind from '../assets/icons/Tailwind.astro';
+import Git from '../assets/icons/Git.astro';
+import Github from '../assets/icons/Github.astro';
+import Bootstrap from '../assets/icons/Bootstrap.astro';
+import AstroIcon from '../assets/icons/AstroIcon.astro';
+import Figma from '../assets/icons/Figma.astro';
+
+---
+
+<section id="skills" class="skills">
+    <div class="container__skills">
+        <h2>Skills</h2>
+        <article class="skills__data">
+            <div class="skills__icons">
+                <div><Html></Html>HTML</div>
+                <div><Css></Css>CCS</div>
+                <div><Javascript></Javascript>JavaScript</div>
+                <div><Typescript></Typescript>TypeScript</div>
+                <div><Angular></Angular>Angular</div>
+                <div><AstroIcon></AstroIcon>Astro</div>
+                <div><Tailwind></Tailwind>Tailwind</div>
+                <div><Bootstrap></Bootstrap>Bootstrap</div>
+                <div><Git></Git>Git</div>
+                <div><Github></Github>GitHub</div>
+                <div><Figma></Figma>Figma</div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+
+.skills {
+    padding-top: 4.5rem;
+    scroll-margin-top: 3rem ;
+    padding-bottom: 4.5rem;
+}
+
+.container__skills {
+    max-width: 660px;
+    margin: auto;
+    padding: 1rem;
+    color: var(--clr-primary-800);
+    background-color: var(--clr-primary-white);
+    border: 8px solid var(--clr-primary-800);
+    box-shadow:
+    -1px 1px 0 var(--clr-primary-800), 
+    -2px 2px 0 var(--clr-primary-800),
+    -3px 3px 0 var(--clr-primary-800),
+    -4px 4px 0 var(--clr-primary-800),  
+    -5px 5px 0 var(--clr-primary-800),
+    -6px 6px 0 var(--clr-primary-800),
+    -7px 7px 0 var(--clr-primary-800),
+    -8px 8px 0 var(--clr-primary-800),
+    -9px 9px 0 var(--clr-primary-800),
+    -10px 10px 0 var(--clr-primary-800);
+}
+
+.skills__data {
+    display: flex;
+    flex-direction: column;
+    margin: .6rem;
+    padding: 1rem;
+    color: var(--clr-primary-700);
+    background-color: var(--clr-primary-100);
+}
+
+.skills h2 {
+    margin: .6rem;
+    font-size: 2rem;
+    color: var(--clr-primary-800);
+}
+
+.skills__icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.skills__icons div {
+    display: flex;
+    gap: .3rem;
+    padding: .1rem .6rem;
+    font-size: 0.813rem;
+    color: var(--clr-primary-600);
+    background-color: var(--clr-primary-white);
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s ease-in;
+}
+
+.skills__icons div:hover {
+    background-color: var(--clr-primary-700);
+    color: var(--clr-primary-white);
+    transition: .2s ease-in-out;
+}
+
+</style>

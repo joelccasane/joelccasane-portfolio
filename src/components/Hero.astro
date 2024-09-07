@@ -1,0 +1,114 @@
+---
+import {hero} from "../assets/data/data.json";
+import { Image } from "astro:assets";
+import logoIcon from "/public/favicon.webp"
+import Linkedin from '../assets/icons/Linkedin.astro';
+import Github from '../assets/icons/Github.astro';
+import Contact from '../assets/icons/Contact.astro';
+import FileIcon from "../assets/icons/FileIcon.astro";
+---
+
+<section class="hero">
+    <div class="container__hero">
+        <div class="hero__data">
+            <div class="hero__title">
+                <h1>Hello, I'm {hero.name}.</h1>
+            </div>
+            <p><strong>Front-end Developer</strong> with strong knowledge of JavaScript and experience in building responsive and interactive web applications.</p>
+            <p>Dedicated to optimizing web performance and creating accessible, visually appealing interfaces that provide a satisfying user experience.<p>
+            <div class="hero__btns">
+                <a href={hero.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Linkedin"><Linkedin></Linkedin>Linkedin</a>
+                <a href={hero.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github></Github>GitHub</a>
+                <a href={hero.email} aria-label="Contact"><Contact></Contact>Contact</a>
+                <a href={hero.cv} aria-label="CV" target="_blank" rel="noopener noreferrer"><FileIcon></FileIcon>CV</a>
+            </div>
+        </div>
+        <div>
+            <figure>
+                <Image src={logoIcon} alt='Logo Github' width={270}></Image>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<style>
+
+.hero {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 6.25rem 3.125rem;
+    background: rgb(203,223,191);
+    background: radial-gradient(circle, rgba(203,223,191,1) 0%, rgba(170,202,151,1) 35%, rgba(138,183,110,1) 70%, rgba(89,169,88,1) 100%);
+}
+
+.container__hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero__data {
+    width: 100%;
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__title h1 {
+    font-size: 4.5rem;
+    font-family: "DM Serif Text", system-ui, 'open sans';
+}
+
+.hero__data p {
+    width: 100%;
+    max-width: 480px;
+    font-size: 1rem;
+    margin: 0.375rem 0;
+    color: var(--clr-primary-900);
+}
+
+.hero__btns  {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 0.75rem 0;
+}
+
+.hero__btns a {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--clr-primary-900);
+    text-decoration: none;
+}
+
+.hero__btns a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding: 3.75rem 1.25rem;
+    }
+    
+	.hero__title h1 {
+		font-size: 3rem;
+	}
+
+    .hero__data p {
+        font-size: 0.875rem;
+    }
+    
+    .hero__btns {
+        gap: 1.5rem;
+    }
+    
+    .hero img {
+        display: none;
+    }
+}
+</style>

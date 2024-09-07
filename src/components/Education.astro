@@ -1,0 +1,86 @@
+---
+import {education} from '../assets/data/data.json'
+---
+
+<section id="education" class="education">
+    <div class="container__education">
+        <h2>Education</h2>
+        <article class="education__data">
+            {education.map(edu => (
+                <div class="education__company">
+                    <span>{edu.institution}</span>
+                    <time>{edu.date}</time>
+                </div>
+                <p>{edu.field}</p>
+            ))}
+        </article>
+    </div>
+</section>
+
+<style>
+
+.education {
+    padding-top: 4.5rem;
+    scroll-margin-top: 3rem ;
+}
+
+.container__education {
+    max-width: 660px;
+    margin: auto;
+    padding: 1rem;
+    border: 9px solid var(--clr-primary-800);
+    background-color: var(--clr-primary-white);
+    box-shadow:
+    -1px 1px 0 var(--clr-primary-800), 
+    -2px 2px 0 var(--clr-primary-800),
+    -3px 3px 0 var(--clr-primary-800),
+    -4px 4px 0 var(--clr-primary-800),
+    -5px 5px 0 var(--clr-primary-800),
+    -6px 6px 0 var(--clr-primary-800),
+    -7px 7px 0 var(--clr-primary-800),
+    -8px 8px 0 var(--clr-primary-800),
+    -9px 9px 0 var(--clr-primary-800),
+    -10px 10px 0 var(--clr-primary-800);
+}
+
+.education__data {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    margin: .6rem;
+    padding: 1rem;
+    color: var(--clr-primary-800);
+    background-color: var(--clr-primary-100);
+}
+
+.education h2 {
+    margin: .6rem;
+    font-size: 2rem;
+    color: var(--clr-primary-800);
+}
+
+.education__company {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.education__company time {
+    color: var(--clr-primary-600);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.education__data p {
+    margin-bottom: .5rem;   
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .education__company {
+        font-size: 0.875rem;
+    }
+}
+</style>
